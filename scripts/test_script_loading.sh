@@ -41,6 +41,7 @@ do
 												lr_actor="$(echo "scale=10; $lr*$base_lr" | bc)"
 												lr_critic="$(echo "scale=10; $lr_actor*$critic_lr_multi" | bc)"
 												python main.py \
+													--psdd_file="/DATA/moritz/psddAgentFiles/psdds/BSgERSEnv-ca-dynamic-blips-cap6-constraints2_50-30-v6.psdd" \
 													--log_name=test\
 													--log_dir="/DATA/moritz/" \
 													--load_model_path="/DATA/moritz/log/SgERSEnv-ca-dynamic-blips-cap6-constraints2_50-30-v6/short_path/run_0/9999" \

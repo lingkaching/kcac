@@ -41,7 +41,8 @@ do
 												lr_actor="$(echo "scale=10; $lr*$base_lr" | bc)"
 												lr_critic="$(echo "scale=10; $lr_actor*$critic_lr_multi" | bc)"
 												python main.py \
-													--log_name=test\
+													--psdd_file="/DATA/moritz/psddAgentFiles/psdds/BSSEnv-3zones-0.05average-actual-data-art-constraints0-v0.psdd" \
+													--log_name=test \
 													--log_dir="/DATA/moritz/" \
 													--save_model_every=1000 \
 													--seed=$seed \

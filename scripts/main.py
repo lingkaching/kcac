@@ -116,7 +116,9 @@ def run(env, agent, no_episodes, no_exploration_episodes, mode, training_mode, n
 if __name__ == "__main__":
 
     parser = argparse.ArgumentParser(description = 'PSDD Agent')
-
+    parser.add_argument('--psdd_file', help = 'location of the psdd file', required = True)
+    parser.add_argument('--zones2vars_file', help = 'location of the zones2vars file', required = True)
+    parser.add_argument('--presampled_actions_filename_base', help = 'location of the presampled action files', required = True)
     parser.add_argument('--log_name', help = 'name under which to log the experiment', required = True)
     parser.add_argument('--log_dir', help = 'path under which to log the experiment', required = True)
     parser.add_argument('--save_model_every', help = 'save model every _ episodes', type=int, required = True)
@@ -164,7 +166,6 @@ if __name__ == "__main__":
     parser.add_argument('--device', help = 'run on cpu or cuda', default = "cpu")
     parser.add_argument('--no_threads', help = 'number of threads used for training if device is cpu', type = int, default = 1)
     parser.add_argument('--reward_scaling_factor', help = 'factor by which to divide reward', type = int, default = 1)
-    parser.add_argument('--no_presampled_actions_per_file', help = 'to balance memory and speed', type = int, default = 10000)
     parser.add_argument('--load_model_path', help = 'path to load a preexisting model from', default='no model loading')
 
     args = parser.parse_args()
@@ -184,7 +185,7 @@ if __name__ == "__main__":
     env = InfeasibleActionDetectionWrapper(env)
     env = MMDPObsStackWrapper(env, args.no_stack)
 
-    agent = psddAgent(state_size=env.observation_space.shape[0], action_size=args.no_zones, env_name = args.env_name, timesteps = no_env_steps, \
+    agent = psddAgent(psdd_file=args.psdd_file, zones2vars_file = args.zones2vars_file, presampledFileNameBase = args.presampled_actions_filename_base, state_size=env.observation_space.shape[0], action_size=args.no_zones, env_name = args.env_name, timesteps = no_env_steps, \
         log_name = args.log_name, run = args.seed, log_dir = args.log_dir, capacity_limits = env.action_space.high, nresources = args.no_resources, \
         constraints = env.metadata['constraints'], \
         N = args.N, M_start = args.M_start, M_decay = args.M_decay, lr_actor = args.lr_actor, lr_critic = args.lr_critic, epsilon = args.epsilon, \
