@@ -1,4 +1,0 @@
-gym
-gymGame
-numpy
-sklearn
