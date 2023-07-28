@@ -1,0 +1,7 @@
+README.md
+setup.py
+gymGame.egg-info/PKG-INFO
+gymGame.egg-info/SOURCES.txt
+gymGame.egg-info/dependency_links.txt
+gymGame.egg-info/requires.txt
+gymGame.egg-info/top_level.txt
