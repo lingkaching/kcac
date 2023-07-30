@@ -1,9 +1,5 @@
 Unity game engine like framework to build OPENAI gym environments.
+This repo is originally cloned from "https://github.com/bhatiaabhinav/gymGame.git"
 
-To install,
 
-```bash
-git clone https://github.com/bhatiaabhinav/gymGame.git
-cd gymGame
-pip install -e .
-```
+

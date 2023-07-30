@@ -1,12 +1,6 @@
 Emergency Response System (ERS) simulator gym environment
 
-To install,
-
-```bash
-git clone https://github.com/mschuler-smu/gym-ERSLE.git
-cd gym-ERSLE
-pip install -e .
-```
+This repo is originally cloned from "https://github.com/bhatiaabhinav/gym-ERSLE.git".
 
 Avaliable environments:
 
