@@ -129,4 +129,4 @@ def presample_uniform_actions(name, log_dir, uniform_action_sampling, presampled
             pklfile.close()
         print(i + 1, 'of', uniform_action_sampling)
 
-presample_uniform_actions('testname', './', 10, 'testuniformactionsampling', 10_000, tc.device("cuda" if tc.cuda.is_available() else "cpu"), 1, 'test-zones2vars.pkl', 'testpsdd.psdd')
+presample_uniform_actions('test4', './', 10, 'testuniformactionsampling', 10_000, tc.device("cuda" if tc.cuda.is_available() else "cpu"), 1, './examples/ents2vars-test4.pkl', './examples/test4.psdd')
