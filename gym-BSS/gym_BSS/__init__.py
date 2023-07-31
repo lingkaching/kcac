@@ -44,7 +44,9 @@ scens_test = [list(range(21, 61)), list(range(30, 100)), list(range(30, 100))]
 zones_5 = [[0,1,2,3,4]]
 lower_5 = [0]
 upper_5_100 = [100]
+upper_5_150 = [150]
 upper_5_200 = [200]
+
 for j in range(len(demands)):
     constraints = build_constraints_2_level_simple(5, zones_5, lower_5, upper_5_100, 0, 23, 100)
     register(
@@ -94,7 +96,7 @@ for j in range(len(demands)):
             'constraints': constraints
         }
     )
-
+    constraints = build_constraints_2_level_simple(5, zones_5, lower_5, upper_5_150, 0, 35, 150)
     register(
         id='BSSEnv-10zones-150bikes-' + demands[j] + '-v0',
         entry_point='gym_BSS.envs:BSSEnv',
@@ -103,6 +105,7 @@ for j in range(len(demands)):
             'data_set_name': demands[j],
             'scenarios': scens_train[j],
             'data_dir': 'default_data-10zones-150bikes-actual-data-art'
+            'constraints': constraints
         }
     )
 
@@ -114,30 +117,11 @@ for j in range(len(demands)):
             'data_set_name': demands[j],
             'scenarios': scens_test[j],
             'data_dir': 'default_data-10zones-150bikes-actual-data-art'
+            'constraints': constraints
         }
     )
 
-    register(
-        id='BSSEnv-10zones-300bikes-' + demands[j] + '-v0',
-        entry_point='gym_BSS.envs:BSSEnv',
-        kwargs={
-            'nzones': 10,
-            'data_set_name': demands[j],
-            'scenarios': scens_train[j],
-            'data_dir': 'default_data-10zones-300bikes-actual-data-art'
-        }
-    )
 
-    register(
-        id='BSSEnvTest-10zones-300bikes-' + demands[j] + '-v0',
-        entry_point='gym_BSS.envs:BSSEnv',
-        kwargs={
-            'nzones': 10,
-            'data_set_name': demands[j],
-            'scenarios': scens_test[j],
-            'data_dir': 'default_data-10zones-300bikes-actual-data-art'
-        }
-    )
 
 # env tight
 zones_15 = [[4, 10, 12], [3, 1, 14, 7], [0, 5, 9, 11], [2, 6, 8, 13]]
