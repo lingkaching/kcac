@@ -98,10 +98,10 @@ for j in range(len(demands)):
     )
     constraints = build_constraints_2_level_simple(5, zones_5, lower_5, upper_5_150, 0, 35, 150)
     register(
-        id='BSSEnv-10zones-150bikes-' + demands[j] + '-v0',
+        id='BSSEnv-5zones-150bikes-' + demands[j] + '-v0',
         entry_point='gym_BSS.envs:BSSEnv',
         kwargs={
-            'nzones': 10,
+            'nzones': 5,
             'data_set_name': demands[j],
             'scenarios': scens_train[j],
             'data_dir': 'default_data-10zones-150bikes-actual-data-art'
@@ -110,10 +110,10 @@ for j in range(len(demands)):
     )
 
     register(
-        id='BSSEnvTest-10zones-150bikes-' + demands[j] + '-v0',
+        id='BSSEnvTest-5zones-150bikes-' + demands[j] + '-v0',
         entry_point='gym_BSS.envs:BSSEnv',
         kwargs={
-            'nzones': 10,
+            'nzones': 5,
             'data_set_name': demands[j],
             'scenarios': scens_test[j],
             'data_dir': 'default_data-10zones-150bikes-actual-data-art'
