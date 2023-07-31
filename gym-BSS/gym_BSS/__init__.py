@@ -104,7 +104,7 @@ for j in range(len(demands)):
             'nzones': 5,
             'data_set_name': demands[j],
             'scenarios': scens_train[j],
-            'data_dir': 'default_data-10zones-150bikes-actual-data-art'
+            'data_dir': 'default_data-5zones-150bikes-actual-data-art'
             'constraints': constraints
         }
     )
@@ -116,7 +116,7 @@ for j in range(len(demands)):
             'nzones': 5,
             'data_set_name': demands[j],
             'scenarios': scens_test[j],
-            'data_dir': 'default_data-10zones-150bikes-actual-data-art'
+            'data_dir': 'default_data-5zones-150bikes-actual-data-art'
             'constraints': constraints
         }
     )
