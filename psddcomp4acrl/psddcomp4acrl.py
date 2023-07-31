@@ -881,7 +881,7 @@ class ResourceConstraintPSDD(PSDD, ResourceConstraintSDD):
 
 
 	@classmethod
-	def create_sdd_and_vtree_for_resource_constraints(cls, nentities, nresources, resource_constraints, name, path = './'):
+	def create_psdd_and_vtree_for_resource_constraints(cls, nentities, nresources, resource_constraints, name, path = './'):
 		if type(resource_constraints) == dict:
 			_, resource_constraints = cls.translate_constraint_dicts_into_constraint_lists(resource_constraints)
 		

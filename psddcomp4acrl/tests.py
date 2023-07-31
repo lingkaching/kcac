@@ -80,4 +80,4 @@ for i in range(25):
 	constraints.append([[i], 'leq', local_upper_bound])
 	# add the below constraint if local_lower_bound is greater than zero
 	# constraints.append([[i], 'geq', local_lower_bound])
-resource_constraint_sdd =  ResourceConstraintPSDD.create_sdd_and_vtree_for_resource_constraints(25, 32, constraints, 'test4', path = './')
+resource_constraint_sdd =  ResourceConstraintPSDD.create_psdd_and_vtree_for_resource_constraints(25, 32, constraints, 'test4', path = './')
