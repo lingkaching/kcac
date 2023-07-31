@@ -1,4 +1,0 @@
-actual-data-art actual-poisson-art actual-poisson-OD-art
-multiplier_average_daily_max_peak_demand: [0.09276589 0.10059297 0.10216152]
-multiplier_dataset_max_peak_demand: [0.07037037 0.08636364 0.08482143]
-Number of bikes: 19
